@@ -26,7 +26,7 @@ int check_str(char *s1, char *s2, int l, int j)
   * wildcmp - compares two strings
   * @s1 : address of string 1
   * @s2 : address of string 2
-  * Return:  returns 1 if the strings can be considered identical, otherwise return 0.
+  * Return:  returns 1 if identical, otherwise return 0.
   */
 
 int wildcmp(char *s1, char *s2)
