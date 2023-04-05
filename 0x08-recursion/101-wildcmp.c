@@ -14,11 +14,11 @@ int check_str(char *s1, char *s2, int l, int j)
 	if (s1[l] == '\0' && s2[j] == '\0')
 		return (1);
 	if (s1[l] == s2[j])
-		return (str_checker(s1, s2, l + 1, j + 1));
+		return (check_str(s1, s2, l + 1, j + 1));
 	if (s1[l] == '\0' && s2[j] == '*')
-		return (str_checker(s1, s2, l, j + 1));
+		return (check_str(s1, s2, l, j + 1));
 	if (s2[j] == '*')
-		return (str_checker(s1, s2, l + 1, j) || str_checker(s1, s2, l, j + 1));
+		return (check_str(s1, s2, l + 1, j) || check_str(s1, s2, l, j + 1));
 	return (0);
 }
 
