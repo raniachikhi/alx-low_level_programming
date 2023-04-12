@@ -17,7 +17,7 @@ int count_words(char *str)
 	{
 		if (str[i] == ' ')
 			temp = 0;
-		if (temp == 0)
+		else if (temp == 0)
 		{
 			temp = 1;
 			l++;
@@ -40,10 +40,6 @@ char **strtow(char *str)
 	while (*(str + l))
 		l++;
 	w = count_words(str);
-	if (w == 0)
-		return (NULL);
-
-	m = (char **)malloc(sizeof(char *) * (w + 1));
 	if (w == 0)
 		return (NULL);
 
