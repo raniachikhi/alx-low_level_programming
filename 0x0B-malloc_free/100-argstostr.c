@@ -25,7 +25,7 @@ char *argstostr(int ac, char **av)
 	}
 	m += ac;
 
-	c = malloc(sizeof(chat) * m + 1);
+	c = malloc(sizeof(char) * m + 1);
 	if (c == NULL)
 		return (NULL);
 	for (i = 0; i < ac; i++)
