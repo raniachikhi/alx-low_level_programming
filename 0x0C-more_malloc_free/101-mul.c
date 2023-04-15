@@ -57,7 +57,7 @@ char *_multiply(char *str1, char *str2)
 		i = str1[len1] - '0';
 		k = 0;
 
-		for (len2 = _strlen(str2) - 1; len2 >= 0; len2)
+		for (len2 = _strlen(str2) - 1; len2 >= 0; len2--)
 		{
 			if (!_isdigit(str2[len2]))
 			{
@@ -98,7 +98,7 @@ int main(int argc, char *argv[])
 	i = 0;
 	while (j < k)
 	{
-		if (ptr[k])
+		if (ptr[j])
 			i = 1;
 		if (i)
 			_putchar(ptr[j] + '0');
