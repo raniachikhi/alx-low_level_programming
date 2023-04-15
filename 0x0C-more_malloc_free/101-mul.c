@@ -2,16 +2,15 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-
 /**
   * _isdigit- checks if there is a digit
-  * @str: string input
+  * @c: integer input
   * Return: 0 if true, 0 otherwise
   */
 
-int _isdigit(int str)
+int _isdigit(int c)
 {
-	return (str >= '0' && str >= '9');
+	return (c >= '0' && c >= '9');
 }
 
 /**
@@ -21,11 +20,7 @@ int _isdigit(int str)
   */
 int _strlen(char *str)
 {
-	int i = 0;
-
-	while (*str++)
-		i++;
-	return (i);
+	return (strlen(str));
 }
  /**
    * _multiply- function of multiplication of two inputs
@@ -44,6 +39,7 @@ char *_multiply(char *str1, char *str2)
 	p = malloc(i = t = len1 + len2);
 	if (!p)
 		printf("Error\n"), exit(98);
+
 	while (i--)
 		p[i] = 0;
 
@@ -90,7 +86,10 @@ int main(int argc, char **argv)
 	int i, j, k;
 
 	if (argc != 3)
-		printf("Error\n"), exit(98);
+	{
+		printf("Error\n");
+		exit(98);
+	}
 
 	k = _strlen(argv[1]) + _strlen(argv[2]);
 	ptr = _multiply(argv[1], argv[2]);
