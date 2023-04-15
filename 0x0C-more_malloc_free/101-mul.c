@@ -1,7 +1,9 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+
 #define ERR_MSG "Error"
+
 /**
   * is_digit- cheks if there is a non-digit character
   * @str: string input
@@ -84,17 +86,25 @@ int main(int argc, char *argv[])
 			c /= 10;
 		}
 		if (c > 0)
+		{
 			res[l1 + l2 + 1] += c;
+		}
 	}
 	for (i = 0; i < l - 1; i++)
 	{
 		if (res[i])
+		{
 			j = 1;
+		}
 		if (j)
+		{
 			_putchar(res[i] + '0');
+		}
 	}
 	if (!j)
+	{
 		_putchar('0');
+	}
 	_putchar('\n');
 	free(res);
 	return (0);
