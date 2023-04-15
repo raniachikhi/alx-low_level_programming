@@ -84,7 +84,7 @@ char *_multiply(char *str1, char *str2)
   * Return: always 0
   */
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
 	char *ptr;
 	int i, j, k;
