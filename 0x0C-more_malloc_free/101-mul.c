@@ -44,8 +44,8 @@ int _strlen(char *str)
 
 void err(void)
 {
-	printf("Error\n")
-		exit(98);
+	printf("Error\n");
+	exit(98);
 }
 
 /**
