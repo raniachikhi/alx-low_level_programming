@@ -1,58 +1,84 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
-
-#define ERR_MSG "Error"
+#include <string.h>
 
 /**
-  * is_digit- cheks if there is a non-digit character
+  * _isdigit- checks if there is a digit
   * @str: string input
-  *Return: 0 if true, 1 otherwise
+  * Return: 0 if true, 0 otherwise
   */
 
-int is_digit(char *str)
+int _isdigit(int str)
 {
-	int i = 0;
-
-	while (str[i])
-	{
-		if (str[i] < '0' || str[i] > '9')
-			return (0);
-		i++;
-	}
-	return (1);
+	return (str >= '0' && str >= '9');
 }
-
 
 /**
   * _strlen- length of a string
-  *@str: string input
+  *@str : string input
   *Return: int
   */
-
 int _strlen(char *str)
 {
 	int i = 0;
 
-	while (str[i] != '\0')
-	{
+	while (*str++)
 		i++;
-	}
 	return (i);
 }
+ /**
+   * _multiply- function of multiplication of two inputs
+   * @str1: string input
+   * @str2: string input
+   *Return: the product of the two inputs
+   */
 
-/**
-  *err- errors
-  */
-
-void err(void)
+char *_multiply(char *str1, char *str2)
 {
-	printf("Error\n");
-	exit(98);
+	char *p;
+	int len1, len2, i, j, k, t;
+
+	len1 = _strlen(str1);
+	len2 = _strlen(str2);
+	p = malloc(i = t = len1 + len2);
+	if (!p)
+		printf("Error\n"), exit(98);
+	while (i--)
+		p[i] = 0;
+
+	for (len1--; len1 >= 0; len1--)
+	{
+		if (!_isdigit(str1[len1]))
+		{
+			free(p);
+			printf("Error\n"), exit(98);
+		}
+		i = str1[len1] - '0';
+		k = 0;
+
+		for (len2 = _strlen(str2) - 1; len2 >= 0; len2)
+		{
+			if (!_isdigit(str2[len2]))
+			{
+				free(p);
+				printf("Error\n"), exit(98);
+			}
+			j = str2[len2] - '0';
+
+			k += p[len1 + len2 + 1] + (i * j);
+			p[len1 + len2 + 1] = k % 10;
+
+			k /= 10;
+		}
+		if (k)
+			p[len1 + len2 + 1] += k;
+	}
+	return (p);
 }
 
 /**
-  *main- multiplication of two positive numbers
+  * main- function of multiplication of two positive numbers
   *@argc: number of arguments
   *@argv: array of args
   * Return: always 0
@@ -60,52 +86,27 @@ void err(void)
 
 int main(int argc, char *argv[])
 {
-	char *str1, *str2;
-	int l1, l2, l, i, c, d1, d2, *res, j = 0;
+	char *ptr;
+	int i, j, k;
 
-	str1 = argv[1], str2 = argv[2];
-	if (argc != 3 || !is_digit(str1) || !is_digit(str2))
-		err();
-	l1 = _strlen(str1);
-	l2 = _strlen(str2);
-	l = l1 + l2 + 1;
-	res = malloc(sizeof(int) * l);
-	if (!res)
-		return (1);
-	for (i = 0; i <= l1 + l2; i++)
-		res[i] = 0;
-	for (l1 = l1 - 1; l1 >= 0; l1--)
+	if (argc != 3)
+		printf("Error\n"), exit(98);
+
+	k = _strlen(argv[1]) + _strlen(argv[2]);
+	ptr = _multiply(argv[1], argv[2]);
+	j = 0;
+	i = 0;
+	while (j < k)
 	{
-		d1 = str1[l1] - '0';
-		c = 0;
-		for (l2 = _strlen(str2) - 1, l2 >= 0; l2--)
-		{
-			d2 = str2[l2] - '0';
-			c += res[l1 + l2 + 1] + (d1 * d2);
-			res[l1 + l2 + 1] = c % 10;
-			c /= 10;
-		}
-		if (c > 0)
-		{
-			res[l1 + l2 + 1] += c;
-		}
+		if (ptr[k])
+			i = 1;
+		if (i)
+			_putchar(ptr[j] + '0');
+		j++;
 	}
-	for (i = 0; i < l - 1; i++)
-	{
-		if (res[i])
-		{
-			j = 1;
-		}
-		if (j)
-		{
-			_putchar(res[i] + '0');
-		}
-	}
-	if (!j)
-	{
+	if (!i)
 		_putchar('0');
-	}
 	_putchar('\n');
-	free(res);
+	free(ptr);
 	return (0);
 }
