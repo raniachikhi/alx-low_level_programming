@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+#define ERR_MSG "Error"
 /**
   * is_digit- cheks if there is a non-digit character
   * @str: string input
