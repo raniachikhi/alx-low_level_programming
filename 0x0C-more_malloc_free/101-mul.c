@@ -90,7 +90,6 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(98);
 	}
-
 	k = _strlen(argv[1]) + _strlen(argv[2]);
 	ptr = multiply(argv[1], argv[2]);
 	j = 0;
