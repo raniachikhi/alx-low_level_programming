@@ -23,13 +23,13 @@ int _strlen(char *str)
 	return (strlen(str));
 }
  /**
-   * _multiply - it's function of multiplication of two inputs
+   * multiply - it's function of multiplication of two inputs
    * @str1: string input
    * @str2: string input
    * Return: the product of the two inputs
    */
 
-char *_multiply(char *str1, char *str2)
+char *multiply(char *str1, char *str2)
 {
 	char *p;
 	int len1, len2, i, j, k, t;
@@ -92,7 +92,7 @@ int main(int argc, char **argv)
 	}
 
 	k = _strlen(argv[1]) + _strlen(argv[2]);
-	ptr = _multiply(argv[1], argv[2]);
+	ptr = multiply(argv[1], argv[2]);
 	j = 0;
 	i = 0;
 	while (j < k)
