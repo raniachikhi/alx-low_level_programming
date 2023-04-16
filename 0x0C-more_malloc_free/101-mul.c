@@ -23,10 +23,10 @@ int _strlen(char *str)
 	return (strlen(str));
 }
  /**
-   * _multiply- function of multiplication of two inputs
+   * _multiply - it's function of multiplication of two inputs
    * @str1: string input
    * @str2: string input
-   *Return: the product of the two inputs
+   * Return: the product of the two inputs
    */
 
 char *_multiply(char *str1, char *str2)
@@ -74,7 +74,7 @@ char *_multiply(char *str1, char *str2)
 }
 
 /**
-  * main- function of multiplication of two positive numbers
+  * main - it's a function of multiplication of two positive numbers
   *@argc: number of arguments
   *@argv: array of args
   * Return: always 0
