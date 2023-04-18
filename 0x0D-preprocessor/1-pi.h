@@ -1,5 +1,5 @@
-#ifdef MACRO_PI_H
-#define MACRO_PI_H
+#ifdef PI
+#define PI
 
 #define PI 3.14159265359
 
