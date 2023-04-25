@@ -1,45 +1,50 @@
 #include "main.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
-/**
-  * _isdigit- checks if there is a digit
-  * @c: integer input
-  * Return: 0 if true, 0 otherwise
-  */
 
+/**
+ * _isdigit - a function that checks if character is digit
+ * @c: the character to check
+ * Return: 1 if digit, 0 otherwise
+ */
 int _isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
 }
 
 /**
-  * _strlen- length of a string
-  *@str : string input
-  *Return: int
-  */
-int _strlen(char *str)
+ * _strlen - the length of a string
+ * @s: the stringinput
+ *
+ * Return: returns an integer
+ */
+int _strlen(char *s)
 {
-	return (strlen(str));
-}
- /**
-   * b_multiply- it's function of multiplication of two inputs
-   * @str1: string input
-   * @str2: string input
-   * Return: the product of the two inputs
-   */
+	int i = 0;
 
+	while (*s++)
+		i++;
+	return (i);
+}
+
+/**
+ * b_multiply - multiply two big number strings
+ * @str1: the number string
+ * @str2: the number string
+ *
+ * Return: the product number string
+ */
 char *b_multiply(char *str1, char *str2)
 {
 	char *p;
-	int len1, len2, i, j, k, t;
+	int len1, len2, i, j, k, temp;
 
 	len1 = _strlen(str1);
 	len2 = _strlen(str2);
-	p = malloc(i = t = len1 + len2);
+	p = malloc(i = temp = len1 + len2);
 	if (!p)
 		printf("Error\n"), exit(98);
-
 	while (i--)
 		p[i] = 0;
 
@@ -73,22 +78,21 @@ char *b_multiply(char *str1, char *str2)
 	return (p);
 }
 
-/**
-  * main-  multiplication of two  numbers strings
-  *@argc: number of arguments
-  *@argv: array of args
-  * Return: always 0
-  */
 
+/**
+ * main - multiply two number strings
+ * @argc: the number of arguments
+ * @argv: array of arguments
+ * Return: Always 0 on success.
+ */
 int main(int argc, char **argv)
 {
 	char *ptr;
 	int i, j, k;
 
 	if (argc != 3)
-	{
 		printf("Error\n"), exit(98);
-	}
+
 	k = _strlen(argv[1]) + _strlen(argv[2]);
 	ptr = b_multiply(argv[1], argv[2]);
 	j = 0;
