@@ -4,7 +4,7 @@
 
 /**
  * print_all- a function that prints anything.
- * c: char, i: integer, f: float, s: char *(if null print (nil)instead)
+ * c= char, i= integer, f= float, s= char *(if null print (nil)instead)
  * @format: list of arg types
  * Return: returns void
  */
