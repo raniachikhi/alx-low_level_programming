@@ -23,13 +23,13 @@ int _strlen(char *str)
 	return (strlen(str));
 }
  /**
-   * multiply - it's function of multiplication of two inputs
+   * b_multiply- it's function of multiplication of two inputs
    * @str1: string input
    * @str2: string input
    * Return: the product of the two inputs
    */
 
-char *multiply(char *str1, char *str2)
+char *b_multiply(char *str1, char *str2)
 {
 	char *p;
 	int len1, len2, i, j, k, t;
@@ -74,7 +74,7 @@ char *multiply(char *str1, char *str2)
 }
 
 /**
-  * main - it's a function of multiplication of two positive numbers
+  * main-  multiplication of two  numbers strings
   *@argc: number of arguments
   *@argv: array of args
   * Return: always 0
@@ -87,11 +87,10 @@ int main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		printf("Error\n");
-		exit(98);
+		printf("Error\n"), exit(98);
 	}
 	k = _strlen(argv[1]) + _strlen(argv[2]);
-	ptr = multiply(argv[1], argv[2]);
+	ptr = b_multiply(argv[1], argv[2]);
 	j = 0;
 	i = 0;
 	while (j < k)
