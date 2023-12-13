@@ -3,7 +3,7 @@
 void print_array(int *array, size_t i, size_t size);
 
 /**
- * binary_search - A function for the binary search algorithm in a string
+ * binary_search - function for the binary search algorithm in a string
  * @array: list of elements
  * @size: size of the list
  * @value: target to search
@@ -37,7 +37,7 @@ int binary_search(int *array, size_t size, int value)
 }
 
 /**
- * print_array - a function that prints all elements in an array
+ * print_array - function that prints all elements in an array
  * @array: list of elements
  * @i: index to init
  * @size: size of the array
